@@ -1,0 +1,17 @@
+remember score as 95
+display "Veter Core 1.0"
+display score
+choose when score >= 50
+    display "passed"
+else choose
+    display "try again"
+close choice
+remember n as 1
+repeat 3 rounds
+    display n
+    revise n as n + 1
+close cycle
+while n < 5
+    display n
+    revise n as n + 1
+close cycle
