@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070b16">
+<meta name="description" content="Meet Veter — an experimental programming language project built in Veter, with a growing language engine and an AI-inspired developer experience.">
+<title>Veter — Build beyond ordinary code</title>
+<style>
+:root{--bg:#070b16;--panel:#0e1527;--panel2:#101b31;--line:rgba(151,178,255,.17);--text:#f3f6ff;--muted:#9eabc9;--cyan:#64e7ff;--violet:#9a82ff;--green:#77f2c0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% 0%,rgba(85,65,190,.18),transparent 34%),radial-gradient(ellipse at 10% 28%,rgba(0,190,230,.09),transparent 28%),var(--bg);color:var(--text);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.06em}.mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(140deg,var(--cyan),var(--violet));display:grid;place-items:center;color:#07101d;font-weight:950;box-shadow:0 0 28px #64e7ff35}.navlinks{display:flex;gap:25px;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--cyan)}.pill{font-size:12px;border:1px solid #64e7ff55;color:var(--cyan);border-radius:99px;padding:6px 10px;display:inline-flex;gap:8px;align-items:center;background:#64e7ff0b}.dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}.hero{padding:86px 0 64px;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:800}.hero h1{font-size:clamp(44px,6.2vw,76px);line-height:1.02;letter-spacing:-.055em;margin:18px 0 22px}.gradient{background:linear-gradient(100deg,#f7faff 5%,var(--cyan) 48%,var(--violet));color:transparent;background-clip:text}.lead{color:var(--muted);font-size:18px;max-width:560px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}.btn{border:1px solid var(--line);border-radius:12px;padding:12px 17px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:750;font-size:14px;cursor:pointer;transition:.2s}.btn.primary{background:linear-gradient(100deg,var(--cyan),#a4c9ff);color:#06101e;border:0;box-shadow:0 8px 30px #64e7ff22}.btn:hover{transform:translateY(-2px);border-color:#64e7ff88}.fine{font-size:12px;color:#7e8cae}.terminal{border:1px solid #6c81c94a;background:linear-gradient(145deg,#111a2e,#090f1d);border-radius:20px;box-shadow:0 28px 90px #0008,0 0 55px #7162ff12;overflow:hidden;position:relative}.terminal:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(130deg,transparent 30%,#64e7ff07 50%,transparent 70%)}.termhead{padding:15px 18px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}.orb{height:8px;width:8px;border-radius:50%;background:#ff7285}.orb:nth-child(2){background:#ffd166}.orb:nth-child(3){background:#77f2c0}.termname{margin-left:auto;letter-spacing:.12em}.termcontent{padding:22px 24px;font:13px/2 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;min-height:275px}.ln{color:#536381;display:inline-block;width:24px}.kw{color:#a995ff}.fn{color:#64e7ff}.str{color:#77f2c0}.num{color:#ffc778}.output{border-top:1px solid var(--line);padding:13px 24px;color:#a7f6d8;font:12px ui-monospace,monospace}.section{padding:68px 0}.sectionhead{max-width:650px;margin-bottom:28px}.section h2{font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-.04em;margin:12px 0}.section p{color:var(--muted)}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid var(--line);border-radius:18px;background:linear-gradient(150deg,#10182b,#0a1020);padding:23px}.icon{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#64e7ff12;border:1px solid #64e7ff2b;color:var(--cyan);font-size:20px}.card h3{margin:18px 0 6px}.card p{font-size:14px;margin:0}.playgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.editor,.result{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#0a1020}.bar{padding:13px 16px;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between}.editor textarea{width:100%;height:235px;resize:vertical;border:0;outline:0;background:transparent;color:#dce6ff;padding:18px;font:13px/1.8 ui-monospace,SFMono-Regular,Menlo,monospace}.result pre{padding:18px;margin:0;min-height:235px;white-space:pre-wrap;color:#a7f6d8;font:13px/1.8 ui-monospace,monospace}.playactions{display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap}.notice{font-size:12px;color:var(--muted)}.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{padding:18px;border-top:2px solid #6572a4;background:#0d1425;border-radius:0 0 14px 14px}.step small{color:var(--cyan);letter-spacing:.1em;text-transform:uppercase}.step h3{font-size:16px}.step p{font-size:13px}.download{display:flex;align-items:center;justify-content:space-between;gap:24px;border:1px solid #64e7ff44;background:linear-gradient(100deg,#102238,#17152f);border-radius:22px;padding:28px}.download h2{font-size:30px;margin:0}.download p{margin:7px 0 0}.footer{margin-top:65px;padding:24px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#8390ae;font-size:12px}.tag{display:inline-block;border:1px solid var(--line);padding:5px 8px;border-radius:8px;font-size:11px;color:#b8c6e6;margin:4px 5px 0 0}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:58px;gap:30px}.grid3{grid-template-columns:1fr}.playgrid{grid-template-columns:1fr}.roadmap{grid-template-columns:1fr 1fr}.navlinks{gap:12px}.navlinks a:nth-child(2){display:none}.download{align-items:flex-start;flex-direction:column}}@media(max-width:480px){.wrap{width:min(100% - 28px,1160px)}.navlinks{font-size:12px}.navlinks a:nth-child(3){display:none}.hero h1{font-size:48px}.roadmap{grid-template-columns:1fr}.termcontent{padding:16px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="wrap nav">
+  <a class="brand" href="#"><span class="mark">V</span><span>VETER<span style="color:var(--cyan)">.</span></span></a>
+  <nav class="navlinks"><a href="#vision">Vision</a><a href="#playground">Playground</a><a href="#roadmap">Roadmap</a><a href="#download">Get the code ↗</a></nav>
+</header>
+<main>
+<section class="wrap hero">
+  <div>
+    <span class="pill"><span class="dot"></span> EXPERIMENTAL LANGUAGE · CORE 1.0 PROTOTYPE</span>
+    <div class="eyebrow" style="margin-top:24px">A language project with a bigger vision</div>
+    <h1>Build beyond<br><span class="gradient">ordinary code.</span></h1>
+    <p class="lead">Meet Veter: an independent programming-language project exploring a clear syntax, a growing execution engine, and an AI-inspired developer experience.</p>
+    <div class="actions"><a class="btn primary" href="#playground">Try the demo <span>↘</span></a><a class="btn" href="#download">Explore the source <span>↗</span></a></div>
+    <div class="fine">Veter Language Company · 2026 · Experimental release</div>
+  </div>
+  <div class="terminal">
+    <div class="termhead"><span class="orb"></span><span class="orb"></span><span class="orb"></span><span class="termname">VETER / SAMPLE.VTR</span></div>
+    <div class="termcontent"><span class="ln">01</span><span class="kw">remember</span> score <span class="kw">as</span> <span class="num">95</span>
+<span class="ln">02</span>
+<span class="ln">03</span><span class="kw">choose when</span> score &gt;= <span class="num">35</span>
+<span class="ln">04</span>    <span class="fn">display</span> <span class="str">"You passed!"</span>
+<span class="ln">05</span><span class="kw">else choose</span>
+<span class="ln">06</span>    <span class="fn">display</span> <span class="str">"Keep trying!"</span>
+<span class="ln">07</span><span class="kw">close choice</span></div>
+    <div class="output">▶ DEMO OUTPUT &nbsp; <span style="color:var(--green)">You passed!</span></div>
+  </div>
+</section>
+<section id="vision" class="section wrap">
+  <div class="sectionhead"><div class="eyebrow">The idea</div><h2>Designed to grow.<br><span class="gradient">Built one layer at a time.</span></h2><p>Veter is being developed as its own language project. The goal is a reliable core first, then better tools and AI-assisted workflows—without pretending unfinished features already exist.</p></div>
+  <div class="grid3">
+    <article class="card"><div class="icon">⌘</div><h3>Readable code</h3><p>Explore a distinct, approachable syntax for variables, decisions, loops, and output.</p><span class="tag">Syntax prototype</span></article>
+    <article class="card"><div class="icon">⟡</div><h3>Language engine</h3><p>The next engineering milestone is a dedicated lexer, parser, and interpreter with useful error messages.</p><span class="tag">In development</span></article>
+    <article class="card"><div class="icon">✳</div><h3>AI-inspired tools</h3><p>A futuristic interface and a long-term vision for helpful developer tools. AI features are a future goal, not a claim that an AI model is already built in.</p><span class="tag">Roadmap</span></article>
+  </div>
+</section>
+<section id="playground" class="section wrap">
+  <div class="sectionhead"><div class="eyebrow">Interactive sample</div><h2>Try a tiny Veter program.</h2><p>This browser demo runs a limited set of examples for learning. It is not the full C++ compiler and does not execute arbitrary Veter programs.</p></div>
+  <div class="playgrid">
+    <div class="editor"><div class="bar"><span>sample.vtr</span><span>EDITABLE</span></div><textarea id="code" spellcheck="false">remember score as 95
+display "Veter is running!"
+display score</textarea></div>
+    <div class="result"><div class="bar"><span>Console output</span><span id="status">READY</span></div><pre id="output">Press “Run demo” to execute this supported example.</pre></div>
+  </div>
+  <div class="playactions"><button class="btn primary" id="run">▶ Run demo</button><button class="btn" id="reset">Reset example</button><span class="notice">Supported here: simple “remember … as …” and “display …” lines.</span></div>
+</section>
+<section id="roadmap" class="section wrap">
+  <div class="sectionhead"><div class="eyebrow">Roadmap</div><h2>From prototype to a real language.</h2><p>Progress will be published honestly as each milestone is implemented and tested.</p></div>
+  <div class="roadmap">
+    <div class="step"><small>01 · Current</small><h3>Feature prototype</h3><p>Basic values, input/output, arithmetic, conditions, loops, and a website-builder prototype in the existing codebase.</p></div>
+    <div class="step"><small>02 · Next</small><h3>Independent front end</h3><p>Build a lexer and parser that understand Veter source directly, with clear syntax errors.</p></div>
+    <div class="step"><small>03 · Then</small><h3>Runtime & tests</h3><p>Implement and test types, scope, functions, control flow, and predictable runtime behavior.</p></div>
+    <div class="step"><small>04 · Later</small><h3>Public release</h3><p>Publish a stable release after installation, documentation, examples, and regression tests are reliable.</p></div>
+  </div>
+</section>
+<section id="download" class="section wrap">
+  <div class="download"><div><div class="eyebrow">Developer preview</div><h2>Explore the source code.</h2><p>Download the Veter developer preview and its sample program. This is an early development build, not Veter 1.0.</p></div><div class="actions" style="margin:0"><a class="btn primary" href="downloads/veter_core_1_0.cpp" download>Download Source code ↓</a><a class="btn" href="downloads/veter_core_1_0_test.vtr" download>Sample program ↓</a><a class="btn" href="downloads/Veter_Core_1_0_README.md" download>README ↓</a></div></div>
+  <p class="fine" style="margin-top:18px">To build locally with a Veter compiler: <code>g++ -std=c++20 -Wall -Wextra -pedantic downloads/veter_core_1_0.cpp -o veter</code>. Then run the executable with the sample file according to the README.</p>
+</section>
+</main>
+<footer class="wrap footer"><span>© 2026 Veter Company</span><span>Veter Company · 2026</span><span>Built for the next step, not hype.</span></footer>
+<script>
+const sample='remember score as 95\\ndisplay "Veter is running!"\\ndisplay score';
+const code=document.getElementById('code'), out=document.getElementById('output'), status=document.getElementById('status');
+document.getElementById('run').addEventListener('click',()=>{
+  const vars={}, lines=code.value.split(/\\r?\\n/), results=[];
+  for(let i=0;i<lines.length;i++){
+    const s=lines[i].trim(); if(!s) continue;
+    let m=s.match(/^remember\\s+([A-Za-z_]\\w*)\\s+as\\s+(.+)$/);
+    if(m){let v=m[2].trim(); if(/^".*"$/.test(v)) vars[m[1]]=v.slice(1,-1); else if(v in vars) vars[m[1]]=vars[v]; else if(/^-?\\d+(\\.\\d+)?$/.test(v)) vars[m[1]]=Number(v); else {out.textContent=`Line ${i+1}: demo supports numbers, quoted strings, or existing variables.`;status.textContent='ERROR';return;}continue;}
+    m=s.match(/^display\\s+(.+)$/);
+    if(m){let v=m[1].trim();if(/^".*"$/.test(v))results.push(v.slice(1,-1));else if(v in vars)results.push(String(vars[v]));else if(/^-?\\d+(\\.\\d+)?$/.test(v))results.push(v);else{out.textContent=`Line ${i+1}: unknown value “${v}”. This browser demo supports simple display expressions only.`;status.textContent='ERROR';return;}continue;}
+    out.textContent=`Line ${i+1}: this browser demo does not support that command yet. Try “remember name as 5” or “display name”.`;status.textContent='LIMIT';return;
+  }
+  out.textContent=results.join('\\n')||'(program completed with no output)';status.textContent='FINISHED';
+});
+document.getElementById('reset').addEventListener('click',()=>{code.value=sample;out.textContent='Press “Run demo” to execute this supported example.';status.textContent='READY';});
+</script>
+</body></html>
