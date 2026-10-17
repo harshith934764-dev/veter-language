@@ -2,193 +2,491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Veter — operating system, programming language, developer modules and libraries.">
-<title>Veter | Build the Future</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b14">
+  <meta name="description" content="Discover VeterOS, Veter Language, and tools built for developers, AI, and modern computing.">
+  <title>Veter — Operating System & Programming Language</title>
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#080d18;color:#f5f7ff;line-height:1.7}
-a{text-decoration:none;color:inherit}
-header{padding:18px 7%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-bottom:1px solid #26324a}
-.logo{font-size:29px;font-weight:900;color:#7ca8ff}
-nav{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
-nav a:hover{color:#8cb4ff}
-.hero{text-align:center;padding:95px 20px;background:radial-gradient(ellipse at top,#1b3565,#080d18 70%)}
-.tag{color:#8eb4ff;letter-spacing:3px;font-size:12px;text-transform:uppercase}
-h1{font-size:clamp(42px,8vw,76px);line-height:1.15;margin:20px 0}
-.hero p{max-width:650px;margin:0 auto 28px;color:#bbc7dc}
-.btn{display:inline-block;padding:12px 20px;border-radius:9px;background:#3978f6;color:white;font-weight:bold;margin:5px;border:1px solid #3978f6}
-.btn:hover{background:#245fd0}
-.btn.alt{background:transparent;border-color:#526482}
-section{padding:65px 7%}
-.heading{text-align:center;margin-bottom:32px}
-.heading h2{font-size:32px}
-.heading p,.muted{color:#aab8d0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:20px}
-.card{background:#111a2c;border:1px solid #263650;border-radius:16px;padding:25px;transition:.2s}
-.card:hover{transform:translateY(-4px);border-color:#608dff}
-.card h3{margin:10px 0}
-.card p{color:#aab8d0;font-size:14px;margin-bottom:15px}
-.icon{font-size:32px}
-.pill{display:inline-block;background:#1c2d4a;color:#a9c8ff;padding:3px 10px;border-radius:20px;font-size:12px}
-.contact{text-align:center;background:#10182a}
-footer{padding:30px 7%;border-top:1px solid #263650;color:#aab8d0}
-.footer-row{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
-footer a{color:#a9c8ff}
-footer p{font-size:13px;margin:7px 0}
-.small{font-size:12px;color:#8293af}
-</style>
+  <style>
+    :root {
+      --bg: #080b14;
+      --panel: #101625;
+      --panel2: #151e30;
+      --text: #f4f7ff;
+      --muted: #a6b1c7;
+      --blue: #69a7ff;
+      --cyan: #54e5e5;
+      --border: #253149;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 11, 20, .94);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 850;
+      letter-spacing: -1px;
+    }
+
+    .logo span { color: var(--cyan); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover, footer a:hover { color: var(--cyan); }
+
+    .hero {
+      text-align: center;
+      padding: 105px 0 85px;
+      background:
+        radial-gradient(ellipse at 50% 0%, #16365c 0%, transparent 58%);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 13px;
+      border: 1px solid #31517a;
+      border-radius: 30px;
+      color: var(--cyan);
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 21px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--panel2);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--cyan);
+    }
+
+    .btn-primary {
+      color: #07111b;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      border: none;
+    }
+
+    section { padding: 72px 0; }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 5vw, 42px);
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+    }
+
+    .section-head p {
+      max-width: 680px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, var(--panel), #0d1220);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+      min-width: 0;
+    }
+
+    .card:hover { border-color: #42628c; }
+
+    .card-icon { font-size: 29px; margin-bottom: 12px; }
+
+    .card h3 { font-size: 20px; margin-bottom: 9px; }
+
+    .card p, .card li {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .card ul { padding-left: 20px; margin: 12px 0; }
+
+    .card .btn { margin-top: 18px; }
+
+    .download-card {
+      border-color: #315d77;
+      background: linear-gradient(145deg, #11283a, #101625);
+    }
+
+    .label {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--cyan);
+      background: #183241;
+      padding: 3px 9px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .notice {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--panel);
+      padding: 17px 20px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 22px;
+    }
+
+    .code {
+      overflow-x: auto;
+      background: #060911;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      color: var(--cyan);
+      font: 14px/1.8 Consolas, monospace;
+      white-space: pre;
+    }
+
+    .contact {
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 100%, #132c47, transparent 70%);
+    }
+
+    .contact p { color: var(--muted); margin-bottom: 22px; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    footer a { margin-left: 14px; }
+
+    @media (max-width: 760px) {
+      .nav-links { gap: 12px; justify-content: center; }
+      nav { padding: 13px 0; flex-direction: column; }
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 75px 0 60px; }
+      h1 { letter-spacing: -1.5px; }
+      section { padding: 52px 0; }
+    }
+  </style>
 </head>
 
 <body>
-<header>
-  <a class="logo" href="#">Veter.</a>
-  <nav>
-    <a href="#products">Products</a>
-    <a href="#downloads">Downloads</a>
-    <a href="#modules">Modules</a>
-    <a href="#library">Library</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">Veter<span>.</span></a>
+      <div class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#language">Language</a>
+        <a href="#modules">Modules</a>
+        <a href="#library">Library</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-<main>
-<section class="hero">
-  <div class="tag">Technology • Innovation • Development</div>
-  <h1>Build the Future<br>with Veter.</h1>
-  <p>Discover VeterOS and Veter Language — a growing ecosystem for operating systems, programming and developer tools.</p>
-  <a class="btn" href="#products">Explore Veter</a>
-  <a class="btn alt" href="#downloads">Download Center</a>
-</section>
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <span class="tag">INDEPENDENT DEVELOPER PROJECT</span>
+        <h1>Build beyond<br><span class="gradient">the ordinary.</span></h1>
+        <p>
+          Welcome to Veter — a project exploring operating systems,
+          programming languages, developer tools, and AI-powered computing.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#downloads">Explore Downloads ↓</a>
+          <a class="btn" href="#language">Explore Veter Language →</a>
+        </div>
+      </div>
+    </section>
 
-<section id="products">
-  <div class="heading">
-    <h2>Our Products</h2>
-    <p>One ecosystem. Multiple possibilities.</p>
-  </div>
-  <div class="grid">
-    <article class="card">
-      <div class="icon">💻</div>
-      <h3>VeterOS</h3>
-      <span class="pill">Operating System</span>
-      <p>A Linux-based operating system project focused on desktop computing, hardware support and system tools.</p>
-      <a class="btn" href="#downloads">Get VeterOS</a>
-    </article>
-    <article class="card">
-      <div class="icon">⌨️</div>
-      <h3>Veter Language</h3>
-      <span class="pill">Programming Language</span>
-      <p>Explore the Veter compiler, language features, source code and developer resources.</p>
-      <a class="btn alt" href="#library">Explore Language</a>
-    </article>
-  </div>
-</section>
+    <section id="products">
+      <div class="container">
+        <div class="section-head">
+          <h2>Explore <span class="gradient">Veter</span></h2>
+          <p>One project, multiple possibilities for developers and computer users.</p>
+        </div>
 
-<section id="downloads">
-  <div class="heading">
-    <h2>Download Center</h2>
-    <p>Get started with Veter projects.</p>
-  </div>
-  <div class="grid">
-    <article class="card">
-      <div class="icon">📀</div>
-      <h3>VeterOS ISO</h3>
-      <p>Download the bootable image to test or install VeterOS.</p>
-      <!-- Replace # with your actual ISO download URL -->
-      <a class="btn" href="#" onclick="alert('VeterOS ISO link will be added soon.');return false;">Download VeterOS ISO</a>
-      <p class="small">ISO download coming soon.</p>
-    </article>
-    <article class="card">
-      <div class="icon">🧑‍💻</div>
-      <h3>Veter Language Source</h3>
-      <p>Find compiler source code, examples and development files.</p>
-      <!-- Replace the URL below with your actual source repository -->
-      <a class="btn alt" href="https://github.com/">View Source Code</a>
-    </article>
-  </div>
-</section>
+        <div class="grid">
+          <article class="card">
+            <div class="card-icon">💻</div>
+            <h3>VeterOS</h3>
+            <p>A Linux-based operating system project focused on desktop computing, hardware support, and future AI features.</p>
+            <a class="btn" href="#downloads">Get the ISO ↓</a>
+          </article>
 
-<section id="modules">
-  <div class="heading">
-    <h2>Modules</h2>
-    <p>Building blocks for the Veter ecosystem.</p>
-  </div>
-  <div class="grid">
-    <article class="card">
-      <div class="icon">⚙️</div>
-      <h3>OS Modules</h3>
-      <p>System settings, hardware detection, graphics, networking and desktop tools.</p>
-      <span class="pill">In development</span>
-    </article>
-    <article class="card">
-      <div class="icon">🔧</div>
-      <h3>Language Modules</h3>
-      <p>Compiler components, runtime features, input/output and reusable code.</p>
-      <span class="pill">In development</span>
-    </article>
-    <article class="card">
-      <div class="icon">🛠️</div>
-      <h3>Developer Tools</h3>
-      <p>Build utilities, examples, testing tools and documentation.</p>
-      <span class="pill">Planned</span>
-    </article>
-  </div>
-</section>
+          <article class="card">
+            <div class="card-icon">⌨️</div>
+            <h3>Veter Language</h3>
+            <p>An experimental programming language and compiler project for learning, automation, and future development.</p>
+            <a class="btn" href="#language">Learn more →</a>
+          </article>
 
-<section id="library">
-  <div class="heading">
-    <h2>Veter Library</h2>
-    <p>Resources for developers and builders.</p>
-  </div>
-  <div class="grid">
-    <article class="card">
-      <h3>📚 Standard Library</h3>
-      <p>Core utilities and reusable functions for Veter Language.</p>
-      <span class="pill">In development</span>
-    </article>
-    <article class="card">
-      <h3>📦 Packages</h3>
-      <p>A future home for reusable modules, extensions and community packages.</p>
-      <span class="pill">Planned</span>
-    </article>
-    <article class="card">
-      <h3>📖 Documentation</h3>
-      <p>Installation guides, programming tutorials and OS setup instructions.</p>
-      <span class="pill">Growing</span>
-    </article>
-  </div>
-</section>
+          <article class="card">
+            <div class="card-icon">🤖</div>
+            <h3>Veter AI</h3>
+            <p>A future direction for AI tools and intelligent features that could work alongside the Veter ecosystem.</p>
+            <a class="btn" href="#modules">Explore ideas →</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section class="contact" id="contact">
-  <div class="heading">
-    <h2>Connect with Veter</h2>
-    <p>Questions, feedback or collaboration? Contact us.</p>
-  </div>
-  <a class="btn" href="https://wa.me/919347648599">WhatsApp</a>
-  <a class="btn alt" href="mailto:harshith934764@gmail.com">Email Veter</a>
-  <!-- Add your Instagram profile URL here later -->
-  <a class="btn alt" href="#contact" onclick="alert('Instagram link will be added soon.');return false;">Instagram — Coming Soon</a>
-</section>
-</main>
+    <section id="downloads">
+      <div class="container">
+        <div class="section-head">
+          <h2>Downloads</h2>
+          <p>Get the available VeterOS image and explore the project.</p>
+        </div>
 
-<footer>
-  <div class="footer-row">
-    <div>
-      <a class="logo" href="#">Veter.</a>
-      <p>Building an ecosystem for operating systems and programming.</p>
+        <div class="grid">
+          <article class="card download-card">
+            <span class="label">ISO IMAGE</span>
+            <h3>VeterOS Live ISO</h3>
+            <p>File: live-image-amd64.hybrid.iso</p>
+            <p>Reported file size: 2.34 GB</p>
+            <a
+              class="btn btn-primary"
+              href="https://drive.google.com/uc?export=download&amp;id=1yD9RgUQCYrbg09wnC9mxKN6wduk8UX2P"
+              target="_blank"
+              rel="noopener noreferrer">
+              Download VeterOS ↓
+            </a>
+          </article>
+
+          <article class="card">
+            <span class="label">DEVELOPMENT</span>
+            <h3>Veter Language</h3>
+            <p>The compiler is under development. Add your public source-code repository link here when ready.</p>
+            <a class="btn" href="#language">View details →</a>
+          </article>
+
+          <article class="card">
+            <span class="label">COMING LATER</span>
+            <h3>Tools & Updates</h3>
+            <p>Future releases, installation instructions, release notes, and developer tools can be listed here.</p>
+          </article>
+        </div>
+
+        <div class="notice">
+          <strong>Before installing:</strong>
+          Test the ISO in a virtual machine first. Back up important files before installing an operating system.
+          The download button requires your Google Drive file to be shared as
+          <strong>Anyone with the link — Viewer</strong>.
+        </div>
+      </div>
+    </section>
+
+    <section id="language">
+      <div class="container">
+        <div class="section-head">
+          <h2>Veter <span class="gradient">Language</span></h2>
+          <p>A programming language project designed to grow step by step.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Compiler</h3>
+            <p>Build and improve the compiler, parser, runtime, and error messages.</p>
+          </article>
+          <article class="card">
+            <h3>Core syntax</h3>
+            <p>Develop variables, arithmetic, comparisons, conditions, loops, and functions.</p>
+          </article>
+          <article class="card">
+            <h3>Future direction</h3>
+            <p>Explore libraries, developer tools, automation, and AI integrations.</p>
+          </article>
+        </div>
+
+        <div style="margin-top: 25px">
+          <h3 style="margin-bottom: 12px">Example syntax</h3>
+          <div class="code"># Example concept — not guaranteed to run
+# in every version of Veter Language
+
+print("Hello from Veter!")</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modules">
+      <div class="container">
+        <div class="section-head">
+          <h2>Project Modules</h2>
+          <p>Areas that can be developed and documented as the project grows.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="card-icon">🖥️</div>
+            <h3>Desktop & System</h3>
+            <p>Desktop interface, settings, networking, audio, Bluetooth, and hardware compatibility.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">⚙️</div>
+            <h3>Developer Tools</h3>
+            <p>Compiler tooling, diagnostics, documentation, testing, and build automation.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🧠</div>
+            <h3>AI Integration</h3>
+            <p>Explore model integration and useful AI-assisted workflows as capabilities become available.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="library">
+      <div class="container">
+        <div class="section-head">
+          <h2>Veter Library</h2>
+          <p>Resources for users and developers.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3>📘 Documentation</h3>
+            <p>Add installation instructions, guides, and troubleshooting documentation.</p>
+          </article>
+          <article class="card">
+            <h3>🧪 Testing</h3>
+            <p>Document tested hardware, known issues, and verified fixes.</p>
+          </article>
+          <article class="card">
+            <h3>🚀 Roadmap</h3>
+            <p>Publish planned features and clearly identify what is ready versus experimental.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Connect with <span class="gradient">Veter</span></h2>
+          <p>Questions, feedback, and collaboration ideas are welcome.</p>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary"
+             href="mailto:harshith934764@gmail.com">
+            ✉ Email
+          </a>
+          <a class="btn"
+             href="https://wa.me/919347648599"
+             target="_blank"
+             rel="noopener noreferrer">
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Veter Project. Built independently.</div>
+      <div>
+        <a href="#home">Home ↑</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-    <div>
-      <p><a href="#products">Products</a> · <a href="#downloads">Downloads</a></p>
-      <p><a href="#modules">Modules</a> · <a href="#library">Library</a></p>
-      <p><a href="https://wa.me/919347648599">WhatsApp</a></p>
-      <p><a href="mailto:harshith934764@gmail.com">harshith934764@gmail.com</a></p>
-    </div>
-  </div>
-  <p>© 2026 Veter. All rights reserved.</p>
-  <p class="small">VeterOS and Veter Language are evolving projects. Features marked as planned or in development are not necessarily available yet.</p>
-</footer>
+  </footer>
 </body>
 </html>
