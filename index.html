@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1020">
+<meta name="description" content="Meet Veter: an independent operating system and programming language project by Harshith Reddy. Explore VeterOS and try Veter Studio in your browser.">
+<title>Veter — Build things your way</title>
+<style>
+:root{--bg:#0b1020;--surface:#111a2e;--surface2:#17223a;--text:#f3f6ff;--muted:#a8b4cc;--line:#2b3854;--cyan:#6ce6dc;--blue:#8ab5ff;--green:#8ee3ad;--pink:#ffb4cf}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#1a3154 0,transparent 34%),var(--bg);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}.wrap{width:min(1120px,92%);margin:auto}.top{position:sticky;top:0;z-index:9;background:#0b1020ed;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-size:24px;font-weight:850;letter-spacing:-1px}.brand i{font-style:normal;color:var(--cyan)}.links{display:flex;gap:21px;flex-wrap:wrap;color:var(--muted);font-size:14px}.links a:hover{color:var(--cyan)}.hero{padding:92px 0 70px}.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #3a5775;border-radius:99px;padding:5px 12px;color:var(--cyan);font-size:12px;letter-spacing:.08em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}h1{font-size:clamp(42px,7vw,76px);line-height:1.05;letter-spacing:-.055em;margin:20px 0}h1 span,.grad{background:linear-gradient(90deg,var(--blue),var(--cyan));color:transparent;background-clip:text}.intro{max-width:690px;color:var(--muted);font-size:18px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:11px;padding:11px 17px;background:var(--surface2);color:var(--text);font-weight:700;cursor:pointer;transition:.18s}.btn:hover{transform:translateY(-1px);border-color:var(--cyan)}.primary{background:linear-gradient(100deg,var(--blue),var(--cyan));color:#07111d;border:0}.quiet{background:transparent}.hero-note{font-size:13px;color:var(--muted);margin-top:17px}section{padding:65px 0}.head{text-align:center;max-width:720px;margin:0 auto 32px}.head h2{font-size:clamp(28px,4vw,42px);line-height:1.15;letter-spacing:-.035em;margin:0 0 10px}.head p{color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:linear-gradient(145deg,#131e33,#0f1628);border:1px solid var(--line);border-radius:17px;padding:23px;min-width:0}.icon{font-size:26px}.card h3{margin:8px 0;font-size:20px}.card p,.card li{color:var(--muted);font-size:14px}.pill{display:inline-block;font-size:11px;color:var(--cyan);border:1px solid #2e5962;background:#142b36;padding:3px 9px;border-radius:30px;margin-bottom:10px}.studio{border:1px solid #334461;border-radius:19px;overflow:hidden;background:#0a0f1c;box-shadow:0 22px 70px #0004}.studio-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:13px 16px;background:#141e31;border-bottom:1px solid var(--line)}.lights{display:flex;gap:6px}.lights span{width:9px;height:9px;border-radius:50%;background:#53617a}.studio-title{font-weight:750}.studio-title small{font-weight:400;color:var(--muted);margin-left:8px}.studio-actions{display:flex;gap:8px;flex-wrap:wrap}.btn.sm{padding:7px 11px;font-size:13px;border-radius:8px}.editor-grid{display:grid;grid-template-columns:1fr .85fr;min-height:330px}.pane{min-width:0}.pane+ .pane{border-left:1px solid var(--line)}.pane-head{padding:9px 14px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid #202d44}.codearea{display:block;width:100%;min-height:300px;resize:vertical;border:0;outline:none;padding:18px;background:#0a0f1c;color:#b9f4e7;font:14px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:4}.output{padding:17px;min-height:300px;white-space:pre-wrap;overflow-wrap:anywhere;color:#d6e0f3;font:13px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace}.output .muted{color:#8190aa}.studio-foot{padding:10px 14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.notice{border:1px solid #574c2b;background:#241f16;color:#e5d6ae;padding:13px 15px;border-radius:11px;margin-top:15px;font-size:13px}.syntax-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.syntax{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:17px;min-width:0}.syntax h3{margin:0 0 7px;font-size:16px}.syntax code,.inline-code{font:13px/1.8 ui-monospace,Consolas,monospace;color:#a9f0e3}.syntax pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:0;color:#a9f0e3;font:13px/1.8 ui-monospace,Consolas,monospace}.syntax p{color:var(--muted);font-size:13px;margin:7px 0 0}.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:13px}table{width:100%;border-collapse:collapse;min-width:480px;background:var(--surface);font-size:14px}th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-weight:600}td:first-child{font-family:ui-monospace,monospace;color:var(--cyan)}tr:last-child td{border-bottom:0}.download{border-color:#315d77;background:linear-gradient(145deg,#11283a,#101625)}.contact{text-align:center;background:radial-gradient(ellipse at 50% 100%,#132c47,transparent 70%)}footer{border-top:1px solid var(--line);padding:27px 0;color:var(--muted);font-size:13px}.footrow{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.footbrand{color:var(--text);font-weight:750}.footlinks{display:flex;gap:15px;flex-wrap:wrap}.footlinks a:hover{color:var(--cyan)}
+@media(max-width:760px){nav{padding:12px 0;align-items:flex-start;flex-direction:column}.links{gap:12px}.hero{padding:65px 0 45px}.cards{grid-template-columns:1fr}.editor-grid{grid-template-columns:1fr}.pane+.pane{border-left:0;border-top:1px solid var(--line)}.codearea,.output{min-height:230px}.syntax-grid{grid-template-columns:1fr}section{padding:48px 0}}
+</style></head><body>
+<header class="top"><nav class="wrap"><a class="brand" href="#home">veter<i>.</i></a><div class="links"><a href="#products">Products</a><a href="#studio">Studio</a><a href="#syntax">Syntax guide</a><a href="#downloads">Downloads</a><a href="#about">About</a></div></nav></header>
+<main id="home"><section class="hero"><div class="wrap"><span class="eyebrow"><span class="dot"></span> An independent developer project</span><h1>Make ideas real.<br><span>One line at a time.</span></h1><p class="intro">Welcome to Veter — a growing project exploring a Linux-based operating system, a programming language, and practical tools for people who love to build.</p><div class="actions"><a class="btn primary" href="#studio">Open Veter Studio ↘</a><a class="btn quiet" href="#products">Explore the project</a></div><p class="hero-note">Built with curiosity by Harshith Reddy. Small steps, real progress.</p></div></section>
+<section id="products"><div class="wrap"><div class="head"><h2>Meet the <span class="grad">Veter family</span></h2><p>Three connected ideas, each growing at its own pace.</p></div><div class="cards"><article class="card"><div class="icon">▣</div><h3>VeterOS</h3><p>A Linux-based desktop OS project focused on usability, hardware support, and a foundation for future AI tools.</p><a class="btn sm" href="#downloads">Get the ISO ↗</a></article><article class="card"><div class="icon">⌘</div><h3>Veter Language</h3><p>An experimental language and compiler. Explore examples, learn the current syntax, and try a small browser preview.</p><a class="btn sm" href="#syntax">Read the syntax guide ↗</a></article><article class="card"><div class="icon">✳</div><h3>Veter Studio</h3><p>A simple in-browser coding workspace to edit sample Veter code and preview supported examples without installing anything.</p><a class="btn sm" href="#studio">Start coding ↗</a></article></div></div></section>
+<section id="studio"><div class="wrap"><div class="head"><h2>Your workspace: <span class="grad">Veter Studio</span></h2><p>Write a little code, press Run, and see the browser preview. No account needed.</p></div><div class="studio"><div class="studio-top"><div style="display:flex;align-items:center;gap:11px"><div class="lights"><span></span><span></span><span></span></div><div class="studio-title">main.vtr <small>Veter Playground</small></div></div><div class="studio-actions"><button class="btn sm" id="resetBtn" type="button">Reset</button><button class="btn sm primary" id="runBtn" type="button">▶ Run preview</button></div></div><div class="editor-grid"><div class="pane"><div class="pane-head">Editor · main.vtr</div><textarea id="code" class="codearea" spellcheck="false" aria-label="Veter code editor"># Hello from Veter Studio
+make name "Veter"
+make a 12
+make b 5
+
+say "Hello from " + name
+say a + b
+say a * b
+say (a + b) * 2</textarea></div><div class="pane"><div class="pane-head">Output</div><div id="output" class="output"><span class="muted">Press “Run preview” to see output here.</span></div></div></div><div class="studio-foot" id="status">Veter syntax preview · make/set, say/show/print, arithmetic, checks and repeat loops</div></div><div class="notice"><strong>Heads-up:</strong> this is a browser preview implementing a subset of the syntax in Veter Compiler v1.4. It is not the native C++ compiler, and input/functions or some advanced behavior may differ. Use your native compiler to verify releases.</div></div></section>
+<section id="syntax"><div class="wrap"><div class="head"><h2>Veter Language <span class="grad">syntax guide</span></h2><p>Examples based on the current project direction. The browser preview supports only the core examples marked below; other features may need the native compiler and may still be experimental.</p></div><div class="syntax-grid"><article class="syntax"><h3>01 · Create or change a variable <span class="pill">Compiler syntax</span></h3><pre>make score 10
+set score score + 5
+say score</pre><p>Use make to create a variable and set to update one.</p></article><article class="syntax"><h3>02 · Show output</h3><pre>say "Hello, Veter!"
+show 12 + 5
+print "Done"</pre><p>say, show and print are output commands. Use a space after the command.</p></article><article class="syntax"><h3>03 · Arithmetic</h3><pre>make a 20
+make b 6
+say a + b
+say a - b
+say a * b
+say a / b
+say a % b
+say (a + b) * 2</pre><p>Supports +, -, *, /, %, parentheses and normal arithmetic precedence.</p></article><article class="syntax"><h3>04 · Read user input</h3><pre>take name
+say name</pre><p>take stores a line of user input in the named variable. Browser preview may not support interactive input.</p></article><article class="syntax"><h3>05 · If / otherwise</h3><pre>make score 75
+check score >= 50
+  say "Pass"
+otherwise
+  say "Try again"
+finish</pre><p>Use check with ==, !=, &lt;, &lt;=, &gt; or &gt;=. Close the block with finish.</p></article><article class="syntax"><h3>06 · Repeat loop</h3><pre>repeat 3 times
+  say "Hello!"
+end repeat</pre><p>Repeats the enclosed statements the requested number of times.</p></article><article class="syntax"><h3>07 · While-style loop</h3><pre>make count 1
+keep count <= 3
+  say count
+  set count count + 1
+end</pre><p>keep repeats while its comparison stays true. The compiler uses end to close this loop.</p></article><article class="syntax"><h3>08 · Functions</h3><pre>do greet
+  say "Hello!"
+end
+run greet</pre><p>Function form supported by the compiler: define with do name and call with run name. Close the function using end.</p></article><article class="syntax"><h3>09 · Logic and comments</h3><pre># This is a comment
+check score >= 50 and score < 100
+  say "In range"
+finish</pre><p>Use # for comments and and/or/not in supported conditions.</p></article><article class="syntax"><h3>10 · String length</h3><pre>make word "Veter"
+say len(word)</pre><p>len(...) is supported in the compiler's expression syntax.</p></article></div>
+<div style="margin-top:22px"><h3 style="margin:0 0 12px">Operator quick reference</h3><div class="tablewrap"><table><thead><tr><th>Operator</th><th>Meaning</th><th>Example</th></tr></thead><tbody><tr><td>+</td><td>Addition / supported string joining in preview</td><td>8 + 2</td></tr><tr><td>-</td><td>Subtraction</td><td>8 - 2</td></tr><tr><td>*</td><td>Multiplication</td><td>8 * 2</td></tr><tr><td>/</td><td>Division</td><td>8 / 2</td></tr><tr><td>%</td><td>Remainder</td><td>8 % 3</td></tr><tr><td>( )</td><td>Group an expression</td><td>(8 + 2) * 3</td></tr><tr><td>make / set</td><td>Create or update a variable</td><td>make count 10</td></tr><tr><td>#</td><td>Comment</td><td># note</td></tr></tbody></table></div></div></div></section>
+<section id="downloads"><div class="wrap"><div class="head"><h2>Downloads</h2><p>Try the current VeterOS image carefully and back up important files before installing any operating system.</p></div><div class="cards"><article class="card download"><span class="pill">LIVE ISO</span><h3>VeterOS Live ISO</h3><p>File: live-image-amd64.hybrid.iso</p><p>Reported size: 2.34 GB</p><a class="btn primary" href="https://drive.google.com/uc?export=download&amp;id=1yD9RgUQCYrbg09wnC9mxKN6wduk8UX2P" target="_blank" rel="noopener noreferrer">Download VeterOS ↗</a><p style="font-size:12px">The Google Drive file must be shared as “Anyone with the link — Viewer”.</p></article><article class="card"><span class="pill">LANGUAGE</span><h3>Veter Language</h3><p>The compiler is under development. Keep source code and release notes in a public repository when you're ready.</p><a class="btn sm" href="#syntax">Browse syntax</a></article><article class="card"><span class="pill">NEXT UP</span><h3>Docs & updates</h3><p>Installation guides, versioned language references, known issues, and release notes can be added as the project matures.</p></article></div></div></section>
+<section id="about" class="contact"><div class="wrap"><div class="head"><h2>Made by a developer, for builders.</h2><p>Veter is an independent project in progress. Feedback, testing, and thoughtful contributions help it grow.</p></div><div class="actions" style="justify-content:center"><a class="btn primary" href="mailto:harshith934764@gmail.com">Email the project ↗</a><a class="btn" href="https://wa.me/919347648599" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div></div></section></main>
+<footer><div class="wrap footrow"><div><div class="footbrand">Veter products by Harshith Reddy.</div><div>Independent project · Built one step at a time.</div></div><div class="footlinks"><a href="#home">Home ↑</a><a href="#studio">Veter Studio</a><a href="#syntax">Syntax guide</a><a href="#downloads">Downloads</a></div><div>© <span id="year">2026</span> Veter</div></div></footer>
+<script>
+const starter=`# Hello from Veter Studio
+make name "Veter"
+make a 12
+make b 5
+
+say "Hello from " + name
+say a + b
+say a * b
+say (a + b) * 2`;
+const editor=document.getElementById('code'), output=document.getElementById('output'), status=document.getElementById('status');
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('resetBtn').addEventListener('click',()=>{editor.value=starter;output.textContent='Editor reset. Press Run preview.';status.textContent='Ready · Veter syntax subset';});
+document.getElementById('runBtn').addEventListener('click',()=>{try{const lines=editor.value.split(/\r?\n/),vars=Object.create(null),out=[];runBlock(lines,0,lines.length,vars,out,0);output.textContent=out.length?out.join('\n'):'Program finished with no output.';status.textContent='Finished · Veter syntax subset';}catch(e){output.textContent='Veter preview error: '+e.message;status.textContent='Could not run this example';}});
+function runBlock(lines,start,end,vars,out,depth){if(depth>12)throw Error('Maximum block depth reached');for(let i=start;i<end;i++){let s=lines[i].trim();if(!s||s.startsWith('#')||s==='otherwise'||s==='finish'||s==='end repeat'||s==='end'||s==='end')continue;let m;if((m=s.match(/^(make|set)\s+([A-Za-z_][A-Za-z0-9_]*)\s+(.+)$/))){vars[m[2]]=expr(m[3],vars);continue;}if((m=s.match(/^(say|show|print)\s+(.+)$/))){out.push(String(expr(m[2],vars)));continue;}if((m=s.match(/^repeat\s+(\d+)\s+times$/))){let j=findEnd(lines,i+1,end,'end repeat');for(let n=0;n<Number(m[1]);n++)runBlock(lines,i+1,j,vars,out,depth+1);i=j;continue;}if((m=s.match(/^check\s+(.+)$/))){let j=i+1,other=-1,nest=0;for(;j<end;j++){let t=lines[j].trim();if(t.startsWith('check '))nest++;if(t==='finish'){if(nest===0)break;nest--;}if(t==='otherwise'&&nest===0)other=j;}if(j>=end)throw Error('Missing finish for check block at line '+(i+1));const ok=condition(m[1],vars);if(ok)runBlock(lines,i+1,other>=0?other:j,vars,out,depth+1);else if(other>=0)runBlock(lines,other+1,j,vars,out,depth+1);i=j;continue;}if(/^(take|ask)\s+/.test(s))throw Error('take/ask input is not supported in this browser preview; use the native compiler.');throw Error('Line '+(i+1)+': unsupported or invalid Veter statement: '+s);}}
+function findEnd(lines,start,end,marker){let depth=0;for(let i=start;i<end;i++){let t=lines[i].trim();if(t.startsWith('repeat ')||t.startsWith('keep '))depth++;if(t===marker){if(depth===0)return i;depth--;}}throw Error('Missing '+marker);}
+function expr(src,vars){
+  const tokens=[]; let i=0;
+  while(i<src.length){
+    const rest=src.slice(i);
+    if(/^\s+/.test(rest)){i+=rest.match(/^\s+/)[0].length;continue;}
+    const str=rest.match(/^("(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*')/);
+    if(str){tokens.push({type:'string',value:str[0]});i+=str[0].length;continue;}
+    const num=rest.match(/^\d+(?:\.\d+)?/);
+    if(num){tokens.push({type:'number',value:Number(num[0])});i+=num[0].length;continue;}
+    const id=rest.match(/^[A-Za-z_][A-Za-z0-9_]*/);
+    if(id){tokens.push({type:'id',value:id[0]});i+=id[0].length;continue;}
+    if('+-*/%()'.includes(src[i])){tokens.push({type:src[i],value:src[i]});i++;continue;}
+    throw Error('Unsupported character in expression: '+src[i]);
+  }
+  let pos=0;
+  function primary(){
+    const t=tokens[pos++];
+    if(!t)throw Error('Incomplete expression: '+src);
+    if(t.type==='number')return t.value;
+    if(t.type==='string')return t.value.slice(1,-1).replace(/\\n/g,'\n').replace(/\\t/g,'\t').replace(/\\([\\"'])/g,'$1');
+    if(t.type==='+'||t.type==='-'){const v=primary();if(typeof v!=='number')throw Error('Unary arithmetic requires a number');return t.type==='-'?-v:v;}
+    if(t.type==='('){const v=additive();if(!tokens[pos]||tokens[pos].type!==')')throw Error('Missing closing parenthesis');pos++;return v;}
+    if(t.type==='id'){
+      if(t.value==='len'&&tokens[pos]&&tokens[pos].type==='('){pos++;const v=additive();if(!tokens[pos]||tokens[pos].type!==')')throw Error('Missing closing parenthesis after len');pos++;return String(v).length;}
+      if(!Object.prototype.hasOwnProperty.call(vars,t.value))throw Error('Unknown variable: '+t.value);
+      return vars[t.value];
+    }
+    throw Error('Expected a value in expression: '+src);
+  }
+  function multiplicative(){let v=primary();while(tokens[pos]&&['*','/','%'].includes(tokens[pos].type)){const op=tokens[pos++].type,b=primary();if(typeof v!=='number'||typeof b!=='number')throw Error('Use numeric variables for arithmetic');if((op==='/'||op==='%')&&b===0)throw Error('Division by zero');v=op==='*'?v*b:op==='/'?v/b:v%b;}return v;}
+  function additive(){let v=multiplicative();while(tokens[pos]&&['+','-'].includes(tokens[pos].type)){const op=tokens[pos++].type,b=multiplicative();if(op==='+'&&(typeof v==='string'||typeof b==='string'))v=String(v)+String(b);else{if(typeof v!=='number'||typeof b!=='number')throw Error('Use numeric values for arithmetic');v=op==='+'?v+b:v-b;}}return v;}
+  const result=additive();if(pos!==tokens.length)throw Error('Unexpected token in expression: '+tokens[pos].value);return result;
+}
+function splitTop(s,op){let parts=[],start=0,depth=0,q='';for(let i=0;i<s.length;i++){let c=s[i];if(q){if(c===q&&s[i-1]!=='\\')q='';continue;}if(c==='"'||c==="'"){q=c;continue;}if(c==='(')depth++;if(c===')')depth--;if(c===op&&depth===0){parts.push(s.slice(start,i));start=i+1;}}if(parts.length){parts.push(s.slice(start));return parts;}return [s];}
+function condition(s,vars){let m=s.match(/^(.*?)\s+(==|!=|<=|>=|<|>)\s+(.*)$/);if(!m)throw Error('Use a comparison such as score >= 50');let a=expr(m[1],vars),b=expr(m[3],vars);switch(m[2]){case'==':return a==b;case'!=':return a!=b;case'<':return a<b;case'<=':return a<=b;case'>':return a>b;case'>=':return a>=b;}}
+</script></body></html>
